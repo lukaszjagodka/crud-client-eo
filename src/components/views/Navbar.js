@@ -1,15 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return(
         <nav>
             <div className="nav-wrapper" style={{padding: '20px'}}>
-                <Link to="/">Home</Link>
-                <Link to="/testpage">TestPage</Link>
-                <Link to="/account">Profile</Link>
-                <Link to="/logout">Logout</Link>
-                <Link to="/login">Login</Link>
+                <ul id="nav-mobile">
+                    {/* <li><Link to="/">Home</Link></li>
+                    <li><Link to="/testpage"> Test </Link></li> */}
+                    {/* <Link to="/account">Profile</Link> */}
+                    {/* <li><Link to="/logout">Logout </Link></li>
+                    <li><Link to="/login">Login</Link></li> */}
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/testpage">Test</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                    <li><a href="/login">Login</a></li>
+                </ul>
             </div>
         </nav>
     )
