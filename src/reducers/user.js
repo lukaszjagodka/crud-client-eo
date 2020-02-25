@@ -4,7 +4,7 @@ const initialState = {
     email: '',
     password: '',
     token: '',
-    isAuthenticated: false
+    isAuthenticated: ''
 }
 
 export const userReducer = (state = initialState, action) => {
@@ -35,6 +35,11 @@ export const userReducer = (state = initialState, action) => {
         //         ...state,
         //         token: action.value
         //     }
+        case 'AUTHORIZE_USER':
+            return {
+                ...state,
+                isAuthenticated: action.value
+            }
         default:
             return state;
     }

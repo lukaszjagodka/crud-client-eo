@@ -16,6 +16,7 @@ export const sendUserLogin = (url, data) => (dispatch) =>{
         }
         else{
             localStorage.setItem('jwt', data.accessToken)
+            window.location.reload();
         }
     })
     .catch(err => console.log(err))

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-// import decode from 'jwt-decode';
 
 import Navbar from './components/views/Navbar';
 import TestPage from './components/views/TestPage';
