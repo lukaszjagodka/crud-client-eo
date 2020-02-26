@@ -9,40 +9,30 @@ export default function(ComposedComponent){
     class Authenticator extends React.Component{
         componentDidMount(){
             const token = localStorage.getItem('jwt');
-            // console.log(token)
-            // console.log((this.props.isAuthenticated))
-            if(!token){
+            if(token){
+                return <Redirect to='/'/>
+            }else{
                 return <Redirect to='Login'/>
-                // return console.log('brak tokenu')
             }
-            const decToken = decode(token)
-            console.log(decToken)
-            
-            // try{
-            //     const {exp} = decode(token)
-            //     console.log(exp)
-            //     if( exp < new Date().getTime()/1000){
-            //         return <Redirect to='/login'/>
-            //     }
-            // }catch(e){
-            //     return <Redirect to='/login'/>
-            // }
-            // this.props.authorizeUser(true)
-            
-            // return true;
-
-            // if(!this.props.isAuthenticated || this.props.isAuthenticated == null){
-            //     console.log('Error')
-            // }
-            // this.context.router.push('/login')
         }
-        // componentDidUpdate(){
-        //     console.log(this.props, 'CDU')
-        // }
 
         render(){
             const token = localStorage.getItem('jwt');
-            console.log(this.props.isAuthenticated)
+            // try{
+            //     const {name} = decode(token)
+            //     console.log(name)
+            // }catch(e){
+            //     console.log(e)
+            // }
+            try{
+                const {exp, name} = decode(token)
+                if( exp < new Date().getTime()/1000){
+                    return <Redirect to='/login'/>
+                }
+                console.log(name)
+            }catch(e){
+                return <Redirect to='/login'/>
+            }
             return (
                 !token ? 
                 <Redirect to='/login'/> :
@@ -50,12 +40,9 @@ export default function(ComposedComponent){
             )
         }
     }
-    // Authenticate.propTypes = {
-    //     isAuthenticated: React.propTpyes.bool.isRequired
-    // }
 
     const mapDispatchToProps = (dispatch) => ({
-        authorizeUser: (value) => authorizeUser(dispatch(value))
+        authorizeUser: (value) => dispatch(authorizeUser(value))
     })
 
     const mapStateToProps = (state) => ({
