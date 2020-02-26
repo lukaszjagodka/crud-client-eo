@@ -25,11 +25,11 @@ export default function(ComposedComponent){
             //     console.log(e)
             // }
             try{
-                const {exp, name} = decode(token)
+                const {exp, /*name*/} = decode(token)
                 if( exp < new Date().getTime()/1000){
                     return <Redirect to='/login'/>
                 }
-                console.log(name)
+                // console.log(name)
             }catch(e){
                 return <Redirect to='/login'/>
             }

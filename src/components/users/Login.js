@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { connect } from 'react-redux';
-import  { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import { addUserFromLogin, addEmailFromLogin, addPasswordFromLogin } from '../../actions/user';
 import { sendUserLogin } from './../../actions/fetchPost'
 
@@ -17,8 +17,9 @@ const Login = (props) =>{
     const handleSubmit = (e) => {
         e.preventDefault();
         const data = {email, password}
+        let splitEmail = email.split("@");
+        localStorage.setItem('email', splitEmail[0])
         props.sendUserLogin(`http://localhost:3001/users/login`, data)
-        
     }
     const token = localStorage.getItem('jwt');
     return (

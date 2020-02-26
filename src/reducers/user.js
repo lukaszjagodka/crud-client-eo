@@ -2,7 +2,6 @@
 
 const initialState = {
     email: '',
-    password: '',
     token: '',
     isAuthenticated: ''
 }
@@ -17,18 +16,12 @@ export const userReducer = (state = initialState, action) => {
         //             password: action.value.password
         //         },
         //     }
-        case 'ADD_EMAIL_FROM_LOGIN':
-            // console.log(action.value)
-            return {
-                ...state,
-                email: action.value
-            }
-        case 'ADD_PASSWORD_FROM_LOGIN':
-            // console.log(action.value)
-            return {
-                ...state,
-                password: action.value
-            }
+        // case 'ADD_EMAIL_FROM_LOGIN':
+        //     console.log(action.value)
+        //     return {
+        //         ...state,
+        //         email: action.value
+        //     }
         // case 'ADD_TOKEN_TO_STATE':
         //     console.log(action.value, 'token')
         //     return {
