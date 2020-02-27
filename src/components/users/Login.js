@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
 import { addUserFromLogin, addEmailFromLogin, addPasswordFromLogin } from '../../actions/user';
-import { sendUserLogin } from './../../actions/fetchPost'
+import { sendUserLogin } from '../../actions/fetchPost'
 
 const Login = (props) =>{
     const [email, setEmail] = useState();
