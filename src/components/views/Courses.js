@@ -7,12 +7,14 @@ class Courses extends Component{
         // eslint-disable-next-line
         {this.props.fetchCourses()}
     }
-    
     render(){
+        const coursesArray = this.props.coursesFromFetch
         return(
             <div className="container" style={{padding: '20px'}}>
             Courses
-            
+            {coursesArray.map(course =>
+                <p><span>{course.MarketName} {course.High} {course.Low} {(course.Volume).toFixed(2)}</span></p>
+            )}
          </div>
         )
     }

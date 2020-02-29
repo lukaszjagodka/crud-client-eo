@@ -12,7 +12,7 @@ export default function(ComposedComponent){
             if(token){
                 return <Redirect to='/'/>
             }else{
-                return <Redirect to='Login'/>
+                return <Redirect to='/LogReg'/>
             }
         }
 
@@ -27,15 +27,15 @@ export default function(ComposedComponent){
             try{
                 const {exp, /*name*/} = decode(token)
                 if( exp < new Date().getTime()/1000){
-                    return <Redirect to='/login'/>
+                    return <Redirect to='/logreg'/>
                 }
                 // console.log(name)
             }catch(e){
-                return <Redirect to='/login'/>
+                return <Redirect to='/logreg'/>
             }
             return (
                 !token ? 
-                <Redirect to='/login'/> :
+                <Redirect to='/logreg'/> :
                 <ComposedComponent {...this.props}/>
             )
         }
