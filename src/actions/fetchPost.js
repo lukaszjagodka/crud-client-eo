@@ -1,9 +1,8 @@
 export const sendUserLogin = (url, data) => (dispatch) =>{
     const preparedData = data.name
         ? {name: data.name, email: data.email, password: data.password}
-        : {email: data.email, password: data.password}
+        : {email: data.emailLogin, password: data.passwordLogin}
         
-        console.log('preparedData', preparedData)
     return fetch(url, {
         method: 'POST',
         headers: {

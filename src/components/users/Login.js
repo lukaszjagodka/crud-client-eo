@@ -1,23 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
-import { addUserFromLogin, addEmailFromLogin, addPasswordFromLogin } from '../../actions/user';
+import { setValueFromLogin } from '../../actions/user';
 import { sendUserLogin } from '../../actions/fetchPost'
 
 const Login = (props) =>{
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
-
-    const handleEmail = (e) => {
-        setEmail(e.target.value);
-    }
-    const handlePassword = (e) => {
-        setPassword(e.target.value);
+    const handleSend = (e) => {
+        props.setValueFromLogin(e.target.name, e.target.value)
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = {email, password}
-        let splitEmail = email.split("@");
+        const { emailLogin, passwordLogin } = props;
+        const data = {emailLogin, passwordLogin}
+        let splitEmail = emailLogin.split("@");
         localStorage.setItem('email', splitEmail[0])
         props.sendUserLogin(`http://localhost:3001/users/login`, data)
     }
@@ -25,12 +20,13 @@ const Login = (props) =>{
     return (
         !token ? 
         <div className="container">
+            <div className="center"><h3>Login</h3></div>
             <form onSubmit={(e)=> handleSubmit(e)}>
                 <div className="input-field col s12">
-                    <input id="email" type="email" class="validate" onChange={(e)=> handleEmail(e)} placeholder="Email"/>
+                    <input id="email" name="emailLogin" type="email" class="validate" onChange={(e)=> handleSend(e)} placeholder="Email"/>
                 </div>
                 <div className="input-field col s12">
-                    <input id="password" /*type="password"*/ class="validate" onChange={(e)=> handlePassword(e)} placeholder="Password"/>
+                    <input id="password" name="passwordLogin" /*type="password"*/ class="validate" onChange={(e)=> handleSend(e)} placeholder="Password"/>
                 </div>
                 <button className="btn waves-effect waves-light" type="submit" name="action">Submit</button>
             </form>
@@ -40,15 +36,15 @@ const Login = (props) =>{
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    addUserFromLogin: (value) => dispatch(addUserFromLogin(value)),
-    addEmailFromLogin: (value) => dispatch(addEmailFromLogin(value)),
-    addPasswordFromLogin: (value) => dispatch(addPasswordFromLogin(value)),
-    sendUserLogin: (url, data) => dispatch(sendUserLogin(url, data))
+    sendUserLogin: (url, data) => dispatch(sendUserLogin(url, data)),
+    setValueFromLogin: (name, value) => dispatch(setValueFromLogin(name, value)),
 });
 
 const mapStateToProps = (state) => ({
     isAuthenticated: state.user.isAuthenticated,
-    token: state.user.token
+    token: state.user.token,
+    emailLogin: state.user.emailLogin,
+    passwordLogin: state.user.passwordLogin,
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)

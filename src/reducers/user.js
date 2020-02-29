@@ -1,22 +1,28 @@
-// import { ADD_USER_FROM_LOGIN} from '../actions/types'
-
 const initialState = {
+    name: '',
     email: '',
+    password: '',
+    emailLogin: '',
+    passwordLogin: '',
     isAuthenticated: ''
 }
 
 export const userReducer = (state = initialState, action) => {
     switch (action.type){
-        // case 'ADD_EMAIL_FROM_LOGIN':
-        //     console.log(action.value)
-        //     return {
-        //         ...state,
-        //         email: action.value
-        //     }
         case 'AUTHORIZE_USER':
             return {
                 ...state,
                 isAuthenticated: action.value
+            }
+        case 'SET_VALUE':
+            return {
+                ...state,
+                [action.name]: action.value,
+            }
+        case 'SET_VALUE_FROM_LOGIN':
+            return {
+                ...state,
+                [action.name]: action.value
             }
         default:
             return state;

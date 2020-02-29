@@ -35,7 +35,7 @@ const Registraion = (props) => {
 
 const mapDispatchToProps = (dispatch) => ({
     sendUserLogin: (url, data) => dispatch(sendUserLogin(url, data)),
-    setValue: (name,value) => dispatch(setValue(name, value)),
+    setValue: (name, value) => dispatch(setValue(name, value)),
 });
 
 const mapStateToProps = (state) => ({
