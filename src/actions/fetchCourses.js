@@ -5,9 +5,13 @@ export const fetchCourses = () => (dispatch) => {
         if(!data.success){
             console.log('Courses api dont working.')
         }else{
-            console.log(data.result)
+            dispatch(coursesFromFetch(data.result))
         }
     })
     .catch(err => console.log(err))
 };
 
+export const coursesFromFetch = (value) => ({
+    type: 'ADD_COURSES_FROM_FETCH',
+    value
+})

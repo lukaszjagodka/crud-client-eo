@@ -1,4 +1,9 @@
 export const sendUserLogin = (url, data) => (dispatch) =>{
+    const preparedData = data.name
+        ? {name: data.name, email: data.email, password: data.password}
+        : {email: data.email, password: data.password}
+        
+        console.log('preparedData', preparedData)
     return fetch(url, {
         method: 'POST',
         headers: {
@@ -7,7 +12,7 @@ export const sendUserLogin = (url, data) => (dispatch) =>{
         },
         mode: 'cors',
         credentials: 'same-origin',
-        body: JSON.stringify({email: data.email, password: data.password})
+        body: JSON.stringify(preparedData)
     })
     .then(res => res.json())
     .then(data => {
