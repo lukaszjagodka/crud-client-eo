@@ -20,7 +20,7 @@ class App extends Component {
               <Route path="/testpage" component={auth(TestPage)} />
               <Route path="/logout" component={auth(Logout)}/>
               <Route path="/profile" component={auth(Profile)}/>
-              <Route path="/logreg" component={LogReg} />
+              <Route path="/login" component={LogReg} />
             </Switch>
           </div>
       </BrowserRouter>

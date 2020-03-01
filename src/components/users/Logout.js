@@ -11,6 +11,7 @@ class Logout extends Component{
     render() {
         localStorage.removeItem('jwt');
         localStorage.removeItem('email');
+        localStorage.removeItem('name');
         window.location.reload();
         return (
             <div>

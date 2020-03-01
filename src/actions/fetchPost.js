@@ -1,7 +1,9 @@
+import decode from 'jwt-decode';
+
 export const sendUserLogin = (url, data) => (dispatch) =>{
     const preparedData = data.name
         ? {name: data.name, email: data.email, password: data.password}
-        : {email: data.emailLogin, password: data.passwordLogin}
+        : {email: data.email, password: data.password}
         
     return fetch(url, {
         method: 'POST',
@@ -20,6 +22,11 @@ export const sendUserLogin = (url, data) => (dispatch) =>{
         }
         else{
             localStorage.setItem('jwt', data.accessToken)
+            try{
+                const {name} = decode(data.accessToken)
+                localStorage.setItem('name', name)
+            }catch(e){
+            }
             window.location.reload();
         }
     })

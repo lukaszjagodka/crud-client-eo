@@ -12,30 +12,24 @@ export default function(ComposedComponent){
             if(token){
                 return <Redirect to='/'/>
             }else{
-                return <Redirect to='/LogReg'/>
+                return <Redirect to='/login'/>
             }
         }
 
         render(){
             const token = localStorage.getItem('jwt');
-            // try{
-            //     const {name} = decode(token)
-            //     console.log(name)
-            // }catch(e){
-            //     console.log(e)
-            // }
             try{
-                const {exp, /*name*/} = decode(token)
+                const {exp, name} = decode(token)
                 if( exp < new Date().getTime()/1000){
-                    return <Redirect to='/logreg'/>
+                    return <Redirect to='/login'/>
                 }
-                // console.log(name)
+                localStorage.setItem('name', name)
             }catch(e){
-                return <Redirect to='/logreg'/>
+                return <Redirect to='/login'/>
             }
             return (
                 !token ? 
-                <Redirect to='/logreg'/> :
+                <Redirect to='/login'/> :
                 <ComposedComponent {...this.props}/>
             )
         }

@@ -2,8 +2,6 @@ const initialState = {
     name: '',
     email: '',
     password: '',
-    emailLogin: '',
-    passwordLogin: '',
     isAuthenticated: ''
 }
 
