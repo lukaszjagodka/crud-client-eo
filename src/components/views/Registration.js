@@ -6,13 +6,11 @@ import { setValue } from './../../actions/user'
 class Registration extends Component {
     handleChange = (e) => {
         this.props.setValue(e.target.name, e.target.value)
-        console.log(this.props.setValue(e.target.name, e.target.value))
     }
     handleSubmit = (e) => {
         e.preventDefault();
         const { name, email, password } = this.props;
         const data = { name, email, password}
-        console.log(data)
         this.props.sendUserLogin(`http://localhost:3001/users/register`, data)
         window.location.reload();
         alert('Activation link was send on email.')

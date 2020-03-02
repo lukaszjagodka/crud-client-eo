@@ -8,6 +8,7 @@ export const ADD_EMAIL_FROM_REG = 'ADD_EMAIL_FROM_REG';
 export const ADD_PASS_FROM_REG = 'ADD_PASS_FROM_REG';
 export const SET_VALUE_FROM_LOGIN = 'SET_VALUE_FROM_LOGIN';
 export const SET_VALUE = 'SET_VALUE';
+export const SET_EMAIL = 'SET_EMAIL';
 
 export const ADD_COURSES_FROM_FETCH = 'ADD_COURSES_FROM_FETCH';
 

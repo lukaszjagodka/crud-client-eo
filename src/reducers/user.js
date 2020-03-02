@@ -22,6 +22,11 @@ export const userReducer = (state = initialState, action) => {
                 ...state,
                 [action.name]: action.value
             }
+        case 'SET_EMAIL':
+            return {
+                ...state,
+                email: action.value
+            }
         default:
             return state;
     }

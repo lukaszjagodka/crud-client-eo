@@ -1,4 +1,4 @@
-import { ADD_TOKEN_TO_STATE, AUTHORIZE_USER, SET_VALUE_FROM_LOGIN, SET_VALUE } from './types'
+import { ADD_TOKEN_TO_STATE, AUTHORIZE_USER, SET_VALUE_FROM_LOGIN, SET_VALUE, SET_EMAIL } from './types'
 
 export const tokenToState = (value) => ({
     type: ADD_TOKEN_TO_STATE,
@@ -20,4 +20,9 @@ export const setValueFromLogin = (name, value) => ({
     type: SET_VALUE_FROM_LOGIN,
     name,
     value,
+})
+
+export const setEmail = (value) => ({
+    type: SET_EMAIL,
+    value
 })
