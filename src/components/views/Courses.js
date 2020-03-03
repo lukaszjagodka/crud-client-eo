@@ -9,11 +9,12 @@ class Courses extends Component{
     }
     render(){
         const coursesArray = this.props.coursesFromFetch
+        const newArray = coursesArray.slice(1,15)
         return(
             <div className="container" style={{padding: '20px'}}>
             Courses
-            {coursesArray.map(course =>
-                <p><span>{course.MarketName} {course.High} {course.Low} {(course.Volume).toFixed(2)}</span></p>
+            {newArray.map(course =>
+                <p><span>{course.MarketName} {course.High} {course.Low} {course.Volume}</span></p>
             )}
          </div>
         )

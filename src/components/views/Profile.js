@@ -11,6 +11,9 @@ const Profile = () => {
                 <DeleteAccount/><br/>
                 <ChangePassword/>
             </div>
+            <div className="container">
+
+            </div>
         </div>
     )
 }

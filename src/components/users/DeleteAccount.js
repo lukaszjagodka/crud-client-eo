@@ -17,13 +17,12 @@ class DeleteAccount extends Component {
         const password = this.state.password
         const data = {email: email, password: password}
 
-        // fetch('http://localhost:3001/users/deleteaccount', { method: 'delete'})
         abstractTokenFetch('http://localhost:3001/users/deleteaccount', 'DELETE', data)
         // helperFetch('http://localhost:3001/users/deleteaccount', data)
     }
     render(){
         return(
-            <div className="container center" style={{backgroundColor: '#d0e2ec', paddingLeft: '30px', paddingRight: '30px', paddingBottom: '30px', paddingTop: '1px'}}>
+            <div className="container center" style={{backgroundColor: '#26282a', paddingLeft: '30px', paddingRight: '30px', paddingBottom: '30px', paddingTop: '1px'}}>
             <div className="center"><h5>Delete Account</h5></div>
             <form onSubmit={(e)=>this.handleSubmit(e)}>
                 <div className="input-field col s12">
