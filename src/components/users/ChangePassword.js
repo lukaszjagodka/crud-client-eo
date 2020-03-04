@@ -37,13 +37,13 @@ class DeleteAccount extends Component {
             <div className="center"><h5>Change password</h5></div>
             <form onSubmit={(e)=>this.handleSubmit(e)}>
                 <div className="input-field col s12">
-                    <input id="current-password" name="actualPassword" type="password" class="validate" autocomplete="on" onChange={(e)=>this.handleChange(e)} placeholder="Actual password"/>
+                    <input id="current-password" name="actualPassword" type="password" className="validate" autoComplete="on" onChange={(e)=>this.handleChange(e)} placeholder="Actual password"/>
                 </div>
                 <div className="input-field col s12">
-                    <input id="new-password" name="password" type="password" class="validate" autocomplete="on" onChange={(e)=>this.handleChange(e)} placeholder="Password"/>
+                    <input id="new-password" name="password" type="password" className="validate" autoComplete="on" onChange={(e)=>this.handleChange(e)} placeholder="Password"/>
                 </div>
                 <div className="input-field col s12">
-                    <input id="re-new-password" name="rePassword" type="password" class="validate" autocomplete="on" onChange={(e)=>this.handleChange(e)} placeholder="Repeat password"/>
+                    <input id="re-new-password" name="rePassword" type="password" className="validate" autoComplete="on" onChange={(e)=>this.handleChange(e)} placeholder="Repeat password"/>
                 </div>
                 <button className="btn waves-effect waves-light" type="submit" name="action">Submit</button>
             </form>

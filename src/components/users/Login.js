@@ -21,10 +21,10 @@ const Login = (props) =>{
             <div className="center"><h3>Login</h3></div>
             <form onSubmit={(e)=> handleSubmit(e)}>
                 <div className="input-field col s12">
-                    <input id="email" name="email" type="email" class="validate" onChange={(e) => handleChange(e)} placeholder="Email"/>
+                    <input id="email" name="email" type="email" className="validate" onChange={(e) => handleChange(e)} placeholder="Email"/>
                 </div>
                 <div className="input-field col s12">
-                    <input id="password" name="password" /*type="password"*/ class="validate" onChange={(e) => handleChange(e)} placeholder="Password"/>
+                    <input id="password" name="password" type="password" className="validate" onChange={(e) => handleChange(e)} placeholder="Password"/>
                 </div>
                 <button className="btn waves-effect waves-light" type="submit" name="action">Submit</button>
             </form>

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { abstractTokenFetch } from '../../actions/abstractTokenFetch'
-// import { helperFetch } from '../../helpers/helperFetch'
 class DeleteAccount extends Component {
     state = {
         password: ''
@@ -18,7 +17,6 @@ class DeleteAccount extends Component {
         const data = {email: email, password: password}
 
         abstractTokenFetch('http://localhost:3001/users/deleteaccount', 'DELETE', data)
-        // helperFetch('http://localhost:3001/users/deleteaccount', data)
     }
     render(){
         return(
@@ -26,7 +24,7 @@ class DeleteAccount extends Component {
             <div className="center"><h5>Delete Account</h5></div>
             <form onSubmit={(e)=>this.handleSubmit(e)}>
                 <div className="input-field col s12">
-                    <input id="password" name="password" /*type="password"*/ class="validate" onChange={(e)=>this.handleChange(e)} placeholder="Password"/>
+                    <input id="password" name="password" type="password" className="validate" onChange={(e)=>this.handleChange(e)} placeholder="Password"/>
                 </div>
                 <button className="btn waves-effect waves-light" type="submit" name="action">Submit</button>
             </form>

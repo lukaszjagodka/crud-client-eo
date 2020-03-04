@@ -9,9 +9,7 @@ class Logout extends Component{
         }
     }
     render() {
-        localStorage.removeItem('jwt');
-        localStorage.removeItem('email');
-        localStorage.removeItem('name');
+        localStorage.clear();
         window.location.reload();
         return (
             <div>

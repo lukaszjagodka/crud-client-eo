@@ -21,7 +21,7 @@ const Navbar = () => {
             </div>
         </nav> :
         <nav>
-            <div className="nav-wrapper" style={{ 'padding-left': '45%','backgroundColor': '#7c0e13'}}>
+            <div className="nav-wrapper" style={{ 'paddingLeft': '45%','backgroundColor': '#7c0e13'}}>
                 <h2>LogIn</h2>
             </div>
         </nav>

@@ -13,8 +13,8 @@ const LogReg = () =>{
                 <div>l@g.com</div>
                 <div>qwerty</div>
                 <br/>
-                <div>k@p.com</div>
-                <div>testtest</div>
+                <div>ewela@o2.pl</div>
+                <div>qwerty</div>
             </div>
             <div className="menu center" style={{float:"right", 'paddingRight':'25%', /*'backgroundColor': '#181a1b'*/}}>
                 <Registration/>

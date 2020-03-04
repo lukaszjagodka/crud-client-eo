@@ -12,8 +12,6 @@ class Registration extends Component {
         const { name, email, password } = this.props;
         const data = { name, email, password}
         this.props.sendUserLogin(`http://localhost:3001/users/register`, data)
-        window.location.reload();
-        alert('Activation link was send on email.')
     }
 render(){
     return (
@@ -24,10 +22,10 @@ render(){
                     <input id="name" name="name" onChange={this.handleChange} placeholder="Name"/>
                 </div>
                 <div className="input-field col s12">
-                    <input id="email" name="email" type="email" class="validate" onChange={this.handleChange} placeholder="Email"/>
+                    <input id="email" name="email" type="email" className="validate" onChange={this.handleChange} placeholder="Email"/>
                 </div>
                 <div className="input-field col s12">
-                    <input id="password" name="password" /*type="password"*/ class="validate" onChange={this.handleChange} placeholder="Password"/>
+                    <input id="password" name="password" type="password" className="validate" onChange={this.handleChange} placeholder="Password"/>
                 </div>
                 <button className="btn waves-effect waves-light" type="submit" name="action">Submit</button>
             </form>
