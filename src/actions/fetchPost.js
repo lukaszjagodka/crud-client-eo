@@ -17,7 +17,6 @@ export const sendUserLogin = (url, data) => (dispatch) =>{
     })
     .then(res => res.json())
     .then(data => {
-        console.log(data, 'here')
         if(data.success && data.accessToken){
             localStorage.setItem('jwt', data.accessToken)
             try{
